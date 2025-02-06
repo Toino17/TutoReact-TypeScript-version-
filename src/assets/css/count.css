@@ -1,17 +1,71 @@
 h1{
-    font-size: 24px;
+    font-size: 26px;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: #61dafbaa;
+}
+
+.countMainSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.countMainDiv{
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    height: 50px;
+    font-size: 16px;
+    font-style: italic;
 }
 
 .countDiv{
-    width: 90%;
+    width: 45%;
+    max-width: 500px;
+    min-width: 200px;
     min-height: 250px;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 1vh;
+    background-color: #1a1a1a
 }
 
-@media screen and (min-width:800px) {
-    #root{
-        display: flex;
+button{
+    background-color: #363636;
+}
+
+#root{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+    .countMainDiv{
         flex-direction: row;
+        margin-block: 0;
+        justify-content: space-around;
     }
 
-
+    .countDiv{
+        max-width: 800px;
+    }
 }

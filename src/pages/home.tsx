@@ -1,4 +1,4 @@
-import reactLogo from '../assets/svg/react.svg';
+import ReactLogo from '../comp/reactLogo';
 import '../assets/css/App.css'
 
 
@@ -14,11 +14,7 @@ export default function  Home(){
 function Bienvenue() {
     return (
         <>
-            <div>
-                <a href="https://react.dev" target="_blank">
-                <img src={reactLogo} className="logo" alt="React logo" />
-                </a>
-            </div>
+            <ReactLogo />
             <h1>Bienvenue dans React</h1>
             <p className="read-the-docs">
                 Clique sur le logo React pour plus d'informations

@@ -1,5 +1,5 @@
 import { MouseEventHandler, useState } from "react";
-
+import '../assets/css/ticTacToe.css';
 
 
 interface SquareProps{
@@ -21,7 +21,7 @@ interface propsBoard {
     onPlay: (nextSquares:Array <string | null>) => void;
 }
 
-export  function Board({squares, xIsNext, onPlay}: propsBoard) {
+function Board({squares, xIsNext, onPlay}: propsBoard) {
 
     function handleClick(i: number) {
 
@@ -88,15 +88,15 @@ function calculateWinner(squares: Array<string | null>){
         [0,3,6],
         [1,4,7],
         [2,5,8],
-        [0,4,8]
-    ]
+        [0,4,8],
+    ];
 
     for (let i = 0; i < table.length; i++) {
 
         const [a,b,c] = table[i];
 
         if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) {
-            return squares[0];
+            return squares[a];
         }
         
     }
@@ -108,13 +108,38 @@ function calculateWinner(squares: Array<string | null>){
 export default function Game(){
 
     const [history, setHistory] = useState([Array(9).fill(null)])
-    const [xIsNext, setXIsNest] = useState <boolean> (true)
-    const currentSquares = history[history.length - 1];
+    const [currentMove, setCurrentMove] = useState(0);
+    const currentSquares = history[currentMove];
+    const xIsNext = currentMove %2 === 0;
 
     function handlePlay(nextSquares: Array<string | null>){
-        setHistory([...history, nextSquares]);
-        setXIsNest(!xIsNext);
+
+        const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+        setHistory(nextHistory);
+        setCurrentMove(nextHistory.length -1);
+
     }
+
+    function jumpTo(nextMove: number) {
+        
+        setCurrentMove(nextMove);
+        
+    }
+
+    const moves = history.map((squares, move) =>{
+        let description;
+        if (move>0){
+            description = 'Aller au coup ' + move;
+        }
+        else{
+            description = 'Revenir au début';
+        }
+        return (
+            <li key={move}>
+                <button onClick={() => jumpTo(move)}>{description}</button>
+            </li>
+        )
+    })
 
     return (
         <>
@@ -123,7 +148,7 @@ export default function Game(){
                 <Board squares={currentSquares} xIsNext={xIsNext} onPlay={handlePlay}/>
             </div>
             <div className="game-info">
-                <ol></ol>
+                <ol className="olCoup">{moves}</ol>
             </div>
         </div>
         </>

@@ -28,7 +28,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
@@ -41,31 +41,3 @@
   color: #888;
 }
 
-.board{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.square {
-  border: 1px solid #99999900;
-  border-radius: 8px;
-  float: left;
-  font-size: 14px;
-  line-height: 34px;
-  height: 34px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.board-row{
-  height: 34px;
-}
-
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
-}

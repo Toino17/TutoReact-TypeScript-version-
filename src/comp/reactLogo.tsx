@@ -4,7 +4,7 @@ export default function ReactLogo(){
     return(
         <>
             <div>
-                <a href="https://react.dev" target="_blank">
+                <a href="/">
                     <img src={reactLogo} className="logo" alt="React logo" />
                 </a>
             </div>

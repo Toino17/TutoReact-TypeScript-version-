@@ -1,0 +1,19 @@
+.formList{
+    display: flex;
+    gap: 1rem;
+}
+
+#taskTextInput{
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(247, 247, 247);
+    color: black;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    padding-inline: 5px;
+}
+
+#taskTextInput:focus{
+    outline: 2px solid rgb(59, 59, 59);
+}

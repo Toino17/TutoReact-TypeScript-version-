@@ -1,12 +1,106 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+a{
+  text-decoration: none;
+}
+
 #root {
   margin: 0 auto;
   text-align: center;
   width: 100%;
+  margin-top: 4rem;
+}
+
+nav{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.logoNav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoNav img{
+  width: 30px;
+  aspect-ratio: 1;
+}
+
+.ulNav{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 4rem;
+  font-weight: 600;
+}
+
+.link a{
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: Optimistic Text, -apple-system, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  padding-inline: 1.2rem;
+  padding-bottom: 1px;
+  font-size: 15px;
+}
+
+.logoNav a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.logoNavReact a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  gap: 0.2rem;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.logoNavReact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.ulNav li a:hover{
+  background-color: #3d3d3d;
+  border-radius: 20px;
+}
+
+
+
+.gitHubLogo{
+ width: 25px;
+ height: 25px;
+ color: #ffffff;
 }
 
 .logo {
   height: 6em;
-  padding: 1.5em;
+  margin: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }

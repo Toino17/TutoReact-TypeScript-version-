@@ -30,6 +30,7 @@ function Exercices(){
             <div>
                 <ButtonLink href = "/tictactoe" name= "Tic-Tac-Toe"/>
                 <ButtonLink href = "/count" name= "Compteur"/>
+                <ButtonLink href = "/task" name= "Tâches"/>
             </div>
         </div>
     );
@@ -38,11 +39,11 @@ function Exercices(){
 
 
 interface PropsButtonLink {
-    href: string;
+    href?: string;
     name: string;
 }
 
-function ButtonLink({href, name}: PropsButtonLink){
+export function ButtonLink({href, name}: PropsButtonLink){
     return(
         <>
             <a href={href}>
